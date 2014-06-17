@@ -1,0 +1,58 @@
+/*
+Put anything you reference with "url()" in ../../assets/fonts/
+This way, you can minify your application, and just remove the "source" folder for production
+*/
+/*
+    &:before, &:after {
+        @include clear();
+    }
+*/
+/*
+:hover, :focus, :active {
+    @extend ._hover;
+}
+*/
+.recipeview-infos-container {
+  position: relative;
+  min-height: 150px; }
+
+.recipeview-image {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120%;
+  -webkit-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out; }
+
+.recipeview-tabs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center; }
+  .recipeview-tabs button {
+    width: 50%;
+    padding: 16px 12px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    font-family: "Times New Roman", serif;
+    font-size: 16px;
+    font-style: italic;
+    color: #cdcbd0; }
+    .recipeview-tabs button.active {
+      background: none;
+      border: none;
+      box-shadow: none;
+      font-weight: bold;
+      color: #fff; }
+
+.recipeview-details {
+  padding: 20px; }
+
+@media screen and (min-height: 600px) {
+  .recipeview-infos-container {
+    min-height: 250px; } }

@@ -1,0 +1,880 @@
+/*
+Put anything you reference with "url()" in ../../../assets/fonts/
+This way, you can minify your application, and just remove the "source" folder for production
+*/
+/*
+    &:before, &:after {
+        @include clear();
+    }
+*/
+/*
+:hover, :focus, :active {
+    @extend ._hover;
+}
+*/
+/* ************************* */
+/* VARIABLES
+/* ************************* */
+/* ************************* */
+/* FONT-FACE
+/* ************************* */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../../../assets/fonts/fontawesome-webfont.eot?v=4.0.3");
+  src: url("../../../assets/fonts/fontawesome-webfont.eot?#iefix&v=4.0.3") format("embedded-opentype"), url("../../../assets/fonts/fontawesome-webfont.woff?v=4.0.3") format("woff"), url("../../../assets/fonts/fontawesome-webfont.ttf?v=4.0.3") format("truetype"), url("../../../assets/fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'PixedenStroke';
+  src: url("../../../assets/fonts/Pe-icon-7-stroke.eot?-2irksn");
+  src: url("../../../assets/fonts/Pe-icon-7-stroke.eot?#iefix-2irksn") format("embedded-opentype"), url("../../../assets/fonts/Pe-icon-7-stroke.woff?-2irksn") format("woff"), url("../../../assets/fonts/Pe-icon-7-stroke.ttf?-2irksn") format("truetype"), url("../../../assets/fonts/Pe-icon-7-stroke.svg?-2irksn#Pe-icon-7-stroke") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'RalewayLight';
+  src: url("../../../assets/fonts/raleway-light-webfont.eot");
+  src: url("../../../assets/fonts/raleway-light-webfont.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/raleway-light-webfont.woff") format("woff"), url("../../../assets/fonts/raleway-light-webfont.ttf") format("truetype"), url("../../../assets/fonts/raleway-light-webfont.svg#ralewaylight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'OswaldRegular';
+  src: url("../../../assets/fonts/Oswald-Regular-webfont.eot");
+  src: url("../../../assets/fonts/Oswald-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../../assets/fonts/Oswald-Regular-webfont.woff") format("woff"), url("../../../assets/fonts/Oswald-Regular-webfont.ttf") format("truetype"), url("../../../assets/fonts/Oswald-Regular-webfont.svg#OswaldBook") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/*
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Raleway|Roboto|Roboto+Condensed|Montserrat:400,700|Oswald&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Oswald', sans-serif;
+
+
+
+
+/* ************************* */
+/* HTML, BODY, GLOBALS
+/* ************************* */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; }
+
+html, body, .onyx {
+  font-family: 'RalewayLight', HelveticaNeue, Helvetica, Roboto, SegoeWP, Sans-serif;
+  font-size: 16px; }
+
+html {
+  -ms-touch-action: none; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body,
+.panels,
+.snap-drawer {
+  background: white; }
+
+.main-content {
+  z-index: 2;
+  /* Above drawers */
+  background: #efeff4;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); }
+
+.enyo-vthumb {
+  width: 2px; }
+
+.enyo-hthumb {
+  height: 2px; }
+
+.enyo-thumb {
+  background: #999;
+  border: none;
+  border-radius: 2px;
+  opacity: 1; }
+
+/* ************************* */
+/* PANELS
+/* ************************* */
+.panels > * {
+  width: 340px;
+  background: white; }
+  body.narrow .panels > * {
+    min-width: 100%;
+    max-width: 100%; }
+  .panels > *.mainview {
+    background-color: #fff;
+    background-image: url("http://pickcute.com/upload/img/beautiful-food-photography-corn-beans-and-onions-3467.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: inset 4px 0px 4px rgba(0, 0, 0, 0.3); }
+
+/* ************************* */
+/* MENU
+/* ************************* */
+.menu-wrapper .menu-item {
+  cursor: pointer;
+  display: block;
+  margin: 0;
+  padding: 15px;
+  font-size: 20px;
+  color: #1f1f1f;
+  /*
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  */ }
+  body.isDesktop .menu-wrapper .menu-item:hover, body:not(.isDesktop) .menu-wrapper .menu-item:active {
+    color: #70aa3f; }
+  .menu-wrapper .menu-item::before {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    margin-right: 10px;
+    width: 26px;
+    -webkit-font-smoothing: antialiased; }
+  .menu-wrapper .menu-item.subcategories {
+    padding-right: 40px; }
+    .menu-wrapper .menu-item.subcategories::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 20px;
+      content: "\e688";
+      font-family: 'PixedenStroke';
+      font-size: 36px;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 62px;
+      -webkit-font-smoothing: antialiased; }
+  .menu-wrapper .menu-item.selected {
+    background: #70aa3f;
+    color: #fff; }
+    body.isDesktop .menu-wrapper .menu-item.selected:hover, body:not(.isDesktop) .menu-wrapper .menu-item.selected:active {
+      color: #1f1f1f; }
+    .menu-wrapper .menu-item.selected.subcategories::after {
+      content: "\e682"; }
+.menu-wrapper .submenu-item {
+  cursor: pointer;
+  display: block;
+  margin: 0;
+  padding: 10px 20px 10px 50px;
+  font-size: 14px;
+  color: #fff;
+  background: #70aa3f;
+  transition: all 0.25s ease-out; }
+  body.isDesktop .menu-wrapper .submenu-item:hover, body:not(.isDesktop) .menu-wrapper .submenu-item:active {
+    color: #1f1f1f; }
+.menu-wrapper .menu-item-wrapper {
+  opacity: 0;
+  -webkit-transform: translateX(-150px);
+  transform: translateX(-150px);
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+  transition: transform 0.4s, opacity 0.4s; }
+.menu-wrapper.animate .menu-item-wrapper {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0); }
+  .menu-wrapper.animate .menu-item-wrapper:nth-child(1) {
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s; }
+  .menu-wrapper.animate .menu-item-wrapper:nth-child(2) {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s; }
+  .menu-wrapper.animate .menu-item-wrapper:nth-child(3) {
+    -webkit-transition-delay: 0.15s;
+    transition-delay: 0.15s; }
+  .menu-wrapper.animate .menu-item-wrapper:nth-child(4) {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s; }
+  .menu-wrapper.animate .menu-item-wrapper:nth-child(5) {
+    -webkit-transition-delay: 0.25s;
+    transition-delay: 0.25s; }
+  .menu-wrapper.animate .menu-item-wrapper:nth-child(6) {
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s; }
+
+/* ************************* */
+/* TOOLBAR
+/* ************************* */
+.onyx-toolbar-inline {
+  position: relative;
+  z-index: 5;
+  padding: 15px;
+  border: none;
+  text-align: center;
+  background: #70aa3f; }
+  .onyx-toolbar-inline > p {
+    display: block;
+    margin: 0;
+    padding: 0 80px;
+    font-size: 20px;
+    text-align: center;
+    /*text-transform: uppercase;*/
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .onyx-toolbar-inline.content-navbar {
+    background: #5f9036; }
+
+.toolbar-btn {
+  cursor: pointer;
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  top: 7px;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: all .25s ease-out;
+  transition: all .25s ease-out; }
+  .toolbar-btn::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 40px;
+    text-align: center;
+    font-family: 'PixedenStroke';
+    font-size: 32px;
+    -webkit-font-smoothing: antialiased; }
+  .toolbar-btn.btn-back {
+    left: 10px; }
+    .toolbar-btn.btn-back::before {
+      content: "\e686"; }
+  .toolbar-btn.btn-menu {
+    left: 10px; }
+    .toolbar-btn.btn-menu::before {
+      content: "\e636"; }
+  .toolbar-btn.btn-dialog {
+    right: 54px; }
+    .toolbar-btn.btn-dialog::before {
+      content: "\e667"; }
+  .toolbar-btn.btn-fullscreen {
+    right: 10px; }
+    .toolbar-btn.btn-fullscreen::before {
+      content: "\e658"; }
+  .toolbar-btn.btn-sheet {
+    right: 10px; }
+    .toolbar-btn.btn-sheet::before {
+      content: "\e666"; }
+  .toolbar-btn.btn-sheet-close {
+    right: 10px; }
+    .toolbar-btn.btn-sheet-close::before {
+      content: "\e680";
+      font-size: 44px; }
+  body.isDesktop .toolbar-btn:hover, body:not(.isDesktop) .toolbar-btn:active {
+    opacity: 0.6; }
+
+/* ************************* */
+/* SNAPSCROLLER
+/* ************************* *
+
+.snap-scroller {
+width: 100%;
+height: 100%;
+
+& > div {
+white-space: nowrap;
+}
+}
+
+.snap-slide {
+position: relative !important;
+display: inline-block;
+width: 100%;
+height: 100%;
+
+.block {
+display: block;
+white-space: normal;
+}
+}
+
+
+
+
+/* ************************* */
+/* ANDROID SNAPSCROLLER
+/* ************************* */
+.snapscroller {
+  position: relative;
+  white-space: nowrap;
+  vertical-align: top;
+  overflow-x: auto;
+  overflow-y: hidden; }
+
+.snapscroller-slide {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  top: 0;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  transform: translate3d(0px, 0px, 0px); }
+  .snapscroller-slide > * {
+    white-space: normal; }
+
+/* ************************* */
+/* BLOCKS
+/* Pure CSS masonry
+/* Src: http://designshack.net/articles/css/masonry/
+/* Src: http://sickdesigner.com/masonry-css-getting-awesome-with-css3/
+/* Src: http://jsfiddle.net/jalbertbowdenii/7Chkz/
+/* ************************* */
+.masonry-grid {
+  width: 100%;
+  -moz-column-gap: 0;
+  -webkit-column-gap: 0;
+  column-gap: 0; }
+
+@media screen and (min-width: 481px) {
+  .masonry-grid {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2; } }
+@media screen and (min-width: 769px) {
+  .masonry-grid {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3; } }
+@media screen and (min-width: 1000px) {
+  .masonry-grid {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4; } }
+@media screen and (min-width: 1200px) {
+  .masonry-grid {
+    -moz-column-count: 5;
+    -webkit-column-count: 5;
+    column-count: 5; } }
+.block {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  padding: 4px; }
+  .block .block-image {
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    background: #fff none no-repeat center center;
+    background-size: cover; }
+  .block .block-text {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    color: #fff;
+    font-size: 14px;
+    padding: 15px; }
+  .block.come-in {
+    transform: translateY(0);
+    transition: transform 0.8s ease-out; }
+  .block.come-in:nth-child(odd) {
+    transition-duration: 0.5s; }
+  .block.off-screen-top {
+    transform: translateY(-150px); }
+  .block.off-screen-bottom {
+    transform: translateY(150px); }
+  .block.already-visible {
+    transform: translateY(0);
+    transition: none; }
+
+.smart-image {
+  position: relative;
+  display: block !important;
+  text-align: center;
+  max-width: 100%;
+  font-size: 0;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  /* GIF are not working on Android... */
+    /*
+    &::after {
+    z-index: -1;
+    content: "\f110";
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    font-size: 20px;
+    font-family: 'FontAwesome';
+    color: #666;
+
+    -webkit-animation: spin 2s infinite linear;
+    -moz-animation: spin 2s infinite linear;
+    animation: spin 2s infinite linear;
+
+    -webkit-font-smoothing: antialiased;
+    }
+    */ }
+  body:not(.isAndroid) .smart-image {
+    background-color: #fff; }
+    body:not(.isAndroid) .smart-image.loading {
+      background-image: url("../../assets/img/loader-img.gif") !important;
+      background-size: 24px 24px; }
+    body:not(.isAndroid) .smart-image.transition-init {
+      background-image: url("../../assets/img/transparent.gif") !important;
+      background-size: 1px 1px; }
+  body.isAndroid .smart-image.loading {
+    background-image: url("../../assets/img/transparent.gif") !important;
+    /* WARNING: using this rule will generate numerous artifacts on the dreaded Android...
+    &::after {
+    z-index: -1;
+    content: "\f110";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin-top: -10px;
+    font-size: 20px;
+    font-family: 'FontAwesome';
+    text-align: center;
+    color: #666;
+    }
+    */ }
+
+/* ************************* */
+/* SHEET
+/* Based on App.js: https://github.com/kikinteractive/app
+/* ************************* */
+.sheet {
+  z-index: 10;
+  background: #e8eaef;
+  color: #eee; }
+  .sheet h2 {
+    font-family: OswaldRegular, Sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase; }
+  .sheet .app-section {
+    position: relative;
+    margin: 8px;
+    border: 1px solid #AAA; }
+  .sheet .app-button {
+    margin: 0 auto;
+    height: 40px;
+    border-bottom: 1px solid #AAA;
+    line-height: 40px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+    .sheet .app-button:last-child {
+      border-bottom: none; }
+    .sheet .app-button.green {
+      background-color: #7F7; }
+    .sheet .app-button.red {
+      background-color: #F77; }
+    .sheet .app-button.blue {
+      background-color: #77F; }
+    .sheet .app-button.dark {
+      background-color: #444; }
+  .sheet .app-input {
+    position: relative;
+    display: block;
+    padding: 10px 12px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #AAA;
+    outline: none;
+    border-radius: 0;
+    line-height: 20px;
+    -webkit-appearance: none; }
+  .sheet .app-section .app-input:last-child {
+    border-bottom: none; }
+  .sheet .app-input,
+  .sheet .app-input * {
+    color: #555;
+    font-family: inherit;
+    font-size: inherit; }
+  .sheet input.app-input {
+    height: 40px; }
+  .sheet textarea.app-input {
+    height: 80px;
+    resize: none; }
+  .sheet .app-input input,
+  .sheet .app-input textarea {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: none;
+    border: none;
+    outline: none;
+    line-height: inherit;
+    resize: none;
+    -webkit-appearance: none; }
+  .sheet .app-input input {
+    height: 20px; }
+  .sheet .app-input textarea {
+    height: 60px; }
+  .sheet input.app-input {
+    height: 44px;
+    background: #FFF;
+    line-height: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .sheet body.isAndroid input.app-input {
+    height: 48px;
+    line-height: 18px; }
+  .sheet .app-section input.app-input {
+    border-bottom: none; }
+  .sheet body.isAndroid .app-section input.app-input {
+    height: 40px;
+    line-height: 20px; }
+  .sheet .app-input[type="search"] {
+    padding-left: 34px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACjElEQVR42r3Wz2sTQRjG8e2maW1rTYIoaPEgHqz/gD+KFi8VRb0pVPTi2UPNQRRCEHpQkCKIp0ilQg/BVqQKUi8q1lRzERQ0x3pQVKJIxTaxpql+DzkMD+xkNo1d+NBudt5535md3VnPdmQyGfP/FrSjC+trOhDxmnxo4k70I4lxzOA18riPYRzFFolvSvJBPMU8/los4w3S8JtRRCfGUZJEK3KuKiigV4pwHzl/43gYkLSKMhZRQsVsZ7T9jN1ShFPyCCahHVbwEiM4gyM4gRQe4Tu04DnskCLqFjACTf4Vg4gHxPo4gCfQ2HyY0e/BvIziIzY7LtgIpqC37YLrLIxJ8AK2SbBLIW+ln29ordfBdryXFZ2Eh7CLuBdVo4gyTmuhGjyA30byOexq5B2CKLIyC7fqBZ6V0U8jagkJ299jtHmWVXxJAsZq1xot4DD+GP3NYqOtgJQUkFllAQMoG/3l9WnSXS4p9yy7ys3suAzoOWK2gJMS8AKJBpP7uCj9PagXtBdFI+AH+mvXwhbQjbzslFfqPYYJ5OQ23IEPD2HeA6dkXyihz6WDFJblNTpkPN+BiWHO5E8ZyCvXytfhiwRXkZa2Qf0cRBG6F+yXWGsRhwL292nsRBei8NGKDmzCZePbQL1DPMw9TGJFR1IzgxtI4yqm8Av6LaDnOfSEmYlzWNKZCKJtAtrnEJcirNvqPnwK6tTyyfbM+F2vF9DmOhPmLfmABSzJVlvBIooYRQIeJiyFFlzXhJ73YQjXMYqbSOEYuqXtBtyTxLomtjrv8a7taswiJiy3bxYxr8mHLmYfWcua6JHQ5hcCP2BN3Eb7/8yva2LSSH4XsbVKbm5413AeCePamhYRRYv52z/AKK4/BRObOQAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    -webkit-background-size: 16px 16px;
+    background-size: 16px 16px; }
+  .sheet .app-input[type="search"].no-icon,
+  .sheet body.isAndroid .app-input[type="search"].no-icon-android,
+  .sheet body.isiOS .app-input[type="search"].no-icon-ios {
+    padding-left: 12px;
+    background-image: none; }
+  .sheet .app-section,
+  .sheet .app-list > li,
+  .sheet .app-list > li.app-button,
+  .sheet .app-button,
+  .sheet .app-input {
+    border: none; }
+  .sheet .app-section {
+    margin: 16px;
+    padding: 8px;
+    background: #FFF;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 6px;
+    border-radius: 6px; }
+  .sheet .app-ios-7 .app-section {
+    border-bottom: none; }
+  .sheet .app-section.app-button {
+    margin: 16px;
+    padding: 0; }
+  .sheet p.app-section {
+    padding: 12px 16px;
+    color: #665; }
+  .sheet .app-section > * {
+    margin: 8px 0 0;
+    -webkit-border-radius: 4px;
+    border-radius: 4px; }
+  .sheet .app-section > :first-child {
+    margin-top: 0; }
+
+/* ************************* */
+/* DIALOG
+/* Based on App.js: https://github.com/kikinteractive/app
+/* ************************* */
+.dialog-container {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 340px;
+  background-color: transparent;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: background 0.425s cubic-bezier(0.4, 0.6, 0.05, 1), opacity 0.282s ease-in-out, visibility 0.425s ease-in-out;
+  transition: background 0.425s cubic-bezier(0.4, 0.6, 0.05, 1), opacity 0.282s ease-in-out, visibility 0.425s ease-in-out; }
+  .dialog-container .dialog {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-top: 1px solid #FFF;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.85);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.85);
+    color: #777;
+    -webkit-transform: translateY(110%);
+    transform: translateY(110%);
+    -webkit-transition: -webkit-transform 0.425s cubic-bezier(0.4, 0.6, 0.05, 1);
+    transition: transform 0.425s cubic-bezier(0.4, 0.6, 0.05, 1); }
+    .dialog-container .dialog.dark {
+      background-color: rgba(51, 51, 50, 0.9);
+      border-top-color: #444;
+      color: #999; }
+    .dialog-container .dialog .title {
+      position: relative;
+      margin-bottom: 8px;
+      padding: 16px 20px 0;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center; }
+    .dialog-container .dialog .text {
+      margin-top: 8px;
+      padding: 0 20px 8px;
+      font-size: 16px;
+      font-weight: 400;
+      text-align: center; }
+    .dialog-container .dialog .button {
+      height: 60px;
+      color: #17B;
+      font-size: 22px;
+      font-weight: 300;
+      line-height: 60px;
+      text-align: center; }
+      .dialog-container .dialog .button.ok {
+        color: #3C7; }
+      .dialog-container .dialog .button.cancel {
+        color: #E54; }
+        body.isAndroid .dialog-container .dialog .button.cancel {
+          display: none; }
+      body.isDesktop .dialog-container .dialog .button:hover, body:not(.isDesktop) .dialog-container .dialog .button:active {
+        opacity: 0.5; }
+    .dialog-container .dialog.dark .button {
+      color: #F3F4F5; }
+  .dialog-container.show {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.8); }
+    .dialog-container.show .dialog {
+      -webkit-transform: translateY(0);
+      transform: translateY(0); }
+  body.narrow .dialog-container {
+    min-width: 100%;
+    max-width: 100%; }
+
+/* ************************* */
+/* GRIDLIST
+/* ************************* */
+.gridlist .gridlist-item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+.gridlist .gridlist-title {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 15px 20px;
+  font-family: RalewayLight, Sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  color: #fff; }
+.gridlist .gridlist-image {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+/* ************************* */
+/* SECTION DIAGONAL
+/* ************************* */
+.section-diagonal {
+  position: relative;
+  padding: 10em 10%;
+  background: #2980b9;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+  padding-top: 6em;
+  background: #2072a7; }
+  .section-diagonal::before, .section-diagonal::after {
+    position: absolute;
+    content: '';
+    pointer-events: none;
+    top: 0;
+    left: -25%;
+    z-index: -1;
+    width: 150%;
+    height: 75%;
+    background: inherit;
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0; }
+  .section-diagonal::before {
+    height: 50%;
+    background: #116094;
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+    -webkit-transform-origin: 3% 0;
+    transform-origin: 3% 0; }
+
+/* ************************* */
+/* ICONS
+/* ************************* */
+.icon-home::before {
+  font-family: 'PixedenStroke' !important;
+  content: "\e648"; }
+
+.icon-news::before {
+  font-family: 'PixedenStroke' !important;
+  content: "\e63e"; }
+
+.icon-events::before {
+  font-family: 'PixedenStroke' !important;
+  content: "\e660"; }
+
+.icon-tourism::before {
+  font-family: 'PixedenStroke' !important;
+  content: "\e691"; }
+
+.icon-sport::before {
+  font-family: 'PixedenStroke' !important;
+  content: "\e679"; }
+
+.icon-useful::before {
+  font-family: 'PixedenStroke' !important;
+  content: "\e643"; }
+
+/* ************************* */
+/* CSS ANIMATIONS
+/* ************************* */
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg); }
+
+  100% {
+    -moz-transform: rotate(359deg); } }
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+
+  100% {
+    -webkit-transform: rotate(359deg); } }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+
+  100% {
+    transform: rotate(359deg); } }
+/* ************************* */
+/* OLD DEVICES FIXES
+/* ************************* */
+/* No box shadow */
+body.app-is-old * {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -ms-box-shadow: none !important;
+  -o-box-shadow: none !important;
+  box-shadow: none !important; }
+
+/* ************************* */
+/* MEDIA QUERIES
+/* ************************* */
+/* ************************* */
+/* HELPERS
+/* ************************* */
+/* Responsive image block */
+.img-block {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+  .img-block.forced-width {
+    width: 100%; }
+
+/* Clearfix: countain floats
+Source : http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
+/* For IE 6/7 only - This rule triggers hasLayout and contain floats. */
+/* Reset margins and padding */
+.nomarginpadding {
+  margin: 0;
+  padding: 0; }
+
+/* Wrapper that centers content */
+.wrapper-center {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0; }
+
+/* Avoid clicks */
+.avoid-clicks {
+  pointer-events: none; }
+
+/* ************************* */
+/* BEHAVIOR FIXES
+/* ************************* */
+/* See: http://stackoverflow.com/questions/10014461/why-does-enabling-hardware-acceleration-in-css3-slow-down-performance */
+body {
+  /* optimizeSpeed is the default. Using optimizeLegibility here will typically DOUBLE
+  rendering time! So, think twice about using optimizeLegibility */
+  /* Moreover, it causes a bug with 'text-overflow: ellipsis' on Android */
+  text-rendering: optimizeSpeed;
+  /* subpixel-antialiased is the default, but you might like to use antialiased for a thinner look
+  in Safari. There is no speed penalty for this, nor a speed advantage for "none", which looks
+  absolutely terrible... */
+  -webkit-font-smoothing: subpixel-antialiased; }
+
+/* Disable confusing default behaviors */
+* {
+  /* Shut off long touch on links for info. If this is set to "default", then a long touch
+  on a link will display the URL in a popup. */
+  /* prevent callout when holding tap on links (the native dialog that comes up) */
+  -webkit-touch-callout: none !important;
+  /* prevent webkit from resizing text to fit */
+  -webkit-text-size-adjust: none;
+  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+  -webkit-tap-highlight-color: transparent; }
+
+/* Prevent copy paste, to allow, change 'none' to 'text' (if active for inputs, users can't write within it) */
+/* Src: http://stackoverflow.com/questions/10809995/css-disable-text-selection */
+.enyo-unselectable,
+.enyo-unselectable *:not(input):not(textarea) {
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important; }
+
+/* Turn off webkit checkbox style, works for other inputs too */
+input[type="checkbox"] {
+  -webkit-appearance: none; }
+
+/* ************************* */
+/* PRELOAD IMAGES
+/* ************************* */
+/* Src: http://www.ajaxera.com/image-preloading-through-css3-caching/ */
+/* WARNING: avoid loading every images in memory or it might result in 'received memory warning' *
+body:after{
+content: url("../../assets/img/backgrounds/background-menu.jpg") url("../../assets/img/photo/commerce.jpg");
+display: none;
+}
+*/

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple SmoothPanels example</title>
+        <link rel="shortcut icon" href="assets/favicon.ico"/>
+        <!-- -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <script src="../../../enyo/enyo.js"></script>
+        <script src="../package.js" type="text/javascript"></script>
+        <style>
+            .panel {
+                text-align: center;
+                padding-top: 100px;
+                font-family: "Helvetica Neue", Arial, sans-serif;
+                color: #fafafa;
+                font-size: 2em;
+            }
+        </style>
+    </head>
+    <body class="enyo-unselectable">
+        <script>
+            enyo.kind({
+                name: "SmoothPanelsSimple",
+                next: function() {
+                    this.$.panels.select(this.$.second);
+                },
+                previous: function() {
+                    this.$.panels.select(this.$.first, SmoothPanels.SLIDE_IN_FROM_LEFT, SmoothPanels.SLIDE_OUT_TO_RIGHT);
+                },
+                components: [
+                    {kind: "SmoothPanels", name: "panels", classes: "enyo-fill", components: [
+                        {name: "first", classes: "panel", style: "background-color: blue", ontap: "next", content: "Click me!"},
+                        {name: "second", classes: "panel", style: "background-color: red", ontap: "previous", content: "Click me!"}
+                    ]}
+                ]
+            });
+            new SmoothPanelsSimple().renderInto(document.body);
+        </script>
+    </body>
+</html>

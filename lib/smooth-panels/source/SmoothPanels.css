@@ -1,0 +1,94 @@
+.smoothpanels {
+    position: relative;
+}
+
+.smoothpanels > * {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* slide in from right */
+@-webkit-keyframes slideInFromRight {
+    from { -webkit-transform: translate3d(100%, 0, 0); }
+}
+@keyframes slideInFromRight {
+    from { transform: translate3d(100%, 0, 0); }
+}
+
+/* slide out to left */
+@-webkit-keyframes slideOutToLeft {
+    to { -webkit-transform: translate3d(-100%, 0, 0); }
+}
+@keyframes slideOutToLeft {
+    to { transform: translate3d(-100%, 0, 0); }
+}
+
+/* slide in from top */
+@-webkit-keyframes slideInFromTop {
+    from { -webkit-transform: translate3d(0, -100%, 0); }
+}
+@keyframes slideInFromTop {
+    from { transform: translate3d(0, -100%, 0); }
+}
+
+/* slide out to bottom */
+@-webkit-keyframes slideOutToBottom {
+    to { -webkit-transform: translate3d(0, 100%, 0); }
+}
+@keyframes slideOutToBottom {
+    to { transform: translate3d(0, 100%, 0); }
+}
+
+/* slide in from left */
+@-webkit-keyframes slideInFromLeft {
+    from { -webkit-transform: translate3d(-100%, 0, 0); }
+}
+@keyframes slideInFromLeft {
+    from { transform: translate3d(-100%, 0, 0); }
+}
+
+/* slide out to right */
+@-webkit-keyframes slideOutToRight {
+    to { -webkit-transform: translate3d(100%, 0, 0); }
+}
+@keyframes slideOutToRight {
+    to { transform: translate3d(100%, 0, 0); }
+}
+
+/* slide in from bottom */
+@-webkit-keyframes slideInFromBottom {
+    from { -webkit-transform: translate3d(0, 100%, 0); }
+}
+@keyframes slideInFromBottom {
+    from { transform: translate3d(0, 100%, 0); }
+}
+
+/* slide out to top */
+@-webkit-keyframes slideOutToTop {
+    to { -webkit-transform: translate3d(0, -100%, 0); }
+}
+@keyframes slideOutToTop {
+    to { transform: translate3d(0, -100%, 0); }
+}
+
+/* fade in */
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+}
+
+/* fade out */
+@-webkit-keyframes fadeOut {
+    to { opacity: 0; }
+}
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
