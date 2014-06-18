@@ -1,4 +1,6 @@
 Militant du Goût
 =====
 ## À savoir
-On va tous mourir !
+Ceci est le "readme" de la branche "dev"
+## Date de modif
+18 juin 2014
